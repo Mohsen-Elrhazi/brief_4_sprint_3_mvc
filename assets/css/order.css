@@ -23,11 +23,6 @@ nav {
     align-items: center;
 }
 
-
-.panier{
-    /* position:relative; */
-}
-
 .panier .fa-cart-shopping{
     font-size:22px;
     cursor:pointer;
@@ -60,7 +55,7 @@ nav {
     padding:8px;
     width:400px;
     min-height:calc(100vh);
-    background-color: #ffffff;
+    background-color: #393737;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
    transition:all .4s ease;
 }
