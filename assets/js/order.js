@@ -10,6 +10,8 @@ iconePanier.addEventListener("click", function () {
   }
 });
 
+
+
 // let iconePanier=document.querySelector(".fa-cart-shopping");
 // let listPanier=document.querySelector(".slide-panier");
 
@@ -26,3 +28,7 @@ iconePanier.addEventListener("click", function () {
 // }
 
 // })
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0ea823346b623f98792d93217ef42b7ebe23eb53
