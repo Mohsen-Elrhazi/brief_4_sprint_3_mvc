@@ -28,7 +28,3 @@ iconePanier.addEventListener("click", function () {
 // }
 
 // })
-<<<<<<< HEAD
-=======
-
->>>>>>> 0ea823346b623f98792d93217ef42b7ebe23eb53
