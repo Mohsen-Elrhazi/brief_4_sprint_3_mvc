@@ -13,6 +13,8 @@ if(listPanier.style.display==="none"){
 
 })
 
+
+
 // let iconePanier=document.querySelector(".fa-cart-shopping");
 // let listPanier=document.querySelector(".slide-panier");
 
@@ -29,3 +31,4 @@ if(listPanier.style.display==="none"){
 // }
 
 // })
+
