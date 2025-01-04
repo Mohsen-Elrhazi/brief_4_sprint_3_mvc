@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
 
     <title>Mon Site Web</title>
-    <link rel="stylesheet" href="../assets/css/order.css" />
+    <link rel="stylesheet" href="../../assets/css/order.css" />
 
 
 </head>
@@ -44,7 +44,7 @@
         <h2>Nos Produits</h2>
         <div class="services-container">
             <div class="card">
-                <img src="../assets/images/IPHONE-12-MINI-removebg-preview.png" alt="Service 2">
+                <img src="../../assets/images/IPHONE-12-MINI-removebg-preview.png" alt="Service 2">
                 <h3>IPHONE 12 PRO MAX</h3>
                 <div class="prix">
                     <h4>1000 DH</h4>
@@ -52,7 +52,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="../assets/images/IPHONE-12-PRO-MAX-removebg-preview.png" alt="Service 1">
+                <img src="../../assets/images/IPHONE-12-PRO-MAX-removebg-preview.png" alt="Service 1">
                 <h3>IPHONE 12 MINI</h3>
                 <div class="prix">
                     <h4>12 000 DH</h4>
@@ -60,7 +60,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="../assets/images/IPHONE-13-PRO-removebg-preview.png" alt=" Service 3">
+                <img src="../../assets/images/IPHONE-13-PRO-removebg-preview.png" alt=" Service 3">
                 <h3>IPHONE 13 PRO</h3>
                 <div class="prix">
                     <h4>14 000 DH</h4>
@@ -68,7 +68,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="../assets/images/IPHONE-13-PRO-MAX-removebg-preview.png" alt="Service 4">
+                <img src="../../assets/images/IPHONE-13-PRO-MAX-removebg-preview.png" alt="Service 4">
                 <h3>IPHONE 13 PRO MAX</h3>
                 <div class="prix">
                     <h4>14 500 DH</h4>
@@ -77,7 +77,7 @@
             </div>
 
             <div class="card">
-                <img src="../assets/images/IPHONE-14_-removebg-preview.png" alt="Service 1">
+                <img src="../../assets/images/IPHONE-14_-removebg-preview.png" alt="Service 1">
                 <h3>IPHONE 14</h3>
                 <div class="prix">
                     <h4>15 000 DH</h4>
@@ -85,7 +85,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="../assets/images/IPHONE-14-PRO-removebg-preview.png" alt="Service 2">
+                <img src="../../assets/images/IPHONE-14-PRO-removebg-preview.png" alt="Service 2">
                 <h3>IPHONE 14 PRO</h3>
                 <div class="prix">
                     <h4>16 000 DH</h4>
@@ -93,7 +93,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="../assets/images/iPhone-15-256go-removebg-preview.png" alt="Service 3">
+                <img src="../../assets/images/iPhone-15-256go-removebg-preview.png" alt="Service 3">
                 <h3>iPhone 15</h3>
                 <div class="prix">
                     <h4>18000 DH</h4>
@@ -101,7 +101,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="../assets/images/Iphone-15-Pro-128GB-removebg-preview.png" alt="Service 4">
+                <img src="../../assets/images/Iphone-15-Pro-128GB-removebg-preview.png" alt="Service 4">
                 <h3>Iphone 15 Pro</h3>
                 <div class="prix">
                     <h4>18 600 DH</h4>
@@ -163,7 +163,7 @@
     </div>
 
     <!-- script js -->
-    <script src="../assets/js/order.js"> </script>
+    <script src="../../assets/js/order.js"> </script>
 
 </body>
 
