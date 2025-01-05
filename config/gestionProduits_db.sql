@@ -22,6 +22,10 @@ CREATE TABLE produits(
 ALTER TABLE produits
 ADD COLUMN supprime INT DEFAULT 0;
 
+-- ajouter un colonne pour stocker l'image de produit
+ALTER TABLE produits ADD COLUMN image LONGBLOB;
+
+
 
 
 
