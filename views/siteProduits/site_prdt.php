@@ -155,12 +155,34 @@
         </div>
     </footer>
 
+    <!-- Panier -->
     <div class="slide-panier">
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam dolores minima alias doloribus, maxime
-            quam eligendi perspiciatis? Deleniti ullam iste ipsum, a modi libero inventore perspiciatis voluptatem?
-            Iusto, omnis deserunt?</p>
-        <!-- <i class="fa-solid fa-xmark"></i> -->
+
+        <div id="cart" class="cart">
+            <h2 class="cart-title">Votre Panier</h2>
+            <div id="cart-items">
+                <!-- Exemple d'article dans le panier -->
+                <!-- 
+        <div class="cart-item">
+            <img src="image_produit.jpg" alt="Produit">
+            <div class="cart-item-details">
+                <p class="cart-item-name">Nom du produit</p>
+                <p class="cart-item-price">Prix : 100 DH</p>
+                <p class="cart-item-quantity">Quantité : 1</p>
+            </div>
+            <button class="cart-item-remove">Supprimer</button>
+        </div>
+        -->
+            </div>
+            <div class="cart-total">
+                <strong>Total :</strong> <span id="total-price">0</span> DH
+            </div>
+            <button class="checkout-btn">Passer à la caisse</button>
+        </div>
+
     </div>
+
+
 
     <!-- script js -->
     <script src="../../assets/js/order.js"> </script>

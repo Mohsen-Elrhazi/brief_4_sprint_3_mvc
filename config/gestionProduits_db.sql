@@ -23,6 +23,8 @@ ALTER TABLE produits
 ADD COLUMN supprime INT DEFAULT 0;
 
 
+
+
 CREATE TABLE commandes (
     commandeID INT AUTO_INCREMENT PRIMARY KEY,
     userID INT NOT NULL,
