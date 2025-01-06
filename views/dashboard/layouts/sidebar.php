@@ -6,9 +6,15 @@
     </div>
     <ul class="nav-links">
         <li>
-            <a href="index.php?page=dashboard">
+            <a href="index.php?page=ajouter_produit">
                 <i class="bx bx-grid-alt"></i>
-                <span class="links_name">Dashboard</span>
+                <span class="links_name">Ajouter Produit</span>
+            </a>
+        </li>
+        <li>
+            <a href="index.php?page=edit_produit">
+                <i class="bx bx-grid-alt"></i>
+                <span class="links_name">Edit Produit</span>
             </a>
         </li>
         <li>

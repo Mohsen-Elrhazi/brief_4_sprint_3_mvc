@@ -21,7 +21,7 @@ class ProductManager {
 
     public function displayAll() {
         $conn = Database::getConnection();
-        $stmt = $conn->prepare("SELECT id,  name,image, prix, quantity FROM produits");
+        $stmt = $conn->prepare("SELECT id,  name,image, prix, quantity FROM produits where supprime=0");
         $stmt->execute(); 
         $data = [];
         $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -35,24 +35,47 @@ class ProductManager {
 
     public function save(Product $product) {
         $conn = Database::getConnection();
+         // Encoder l'image en base64
+    $temp =  file_get_contents($product->getImage());
+    $imageBase64 = base64_encode($temp);
     
         $stmt = $conn->prepare("INSERT INTO produits (name, image, prix, quantity) VALUES (:name, :image, :prix, :quantity)");
+      try{
+        $stmt->execute([
+            ':name' => $product->getName(),
+            ':image' => $imageBase64, 
+            ':prix' => $product->getPrice(),
+            ':quantity' => $product->getQuantity()
+        ]);
+
+    }catch(PDOException $ex){
+        echo("error".$ex->getMessage());
+    }
     
+    }
+
+    public function edit(Product $product) {
+        $conn = Database::getConnection();    
+        $stmt = $conn->prepare("update produits set name=:name, image=:image,prix=:prix,quantity=:quantity where id=:id");
         $stmt->execute([
             ':name' => $product->getName(),
             ':image' => $product->getImage(), 
             ':prix' => $product->getPrice(),
-            ':quantity' => $product->getQuantity()
+            ':quantity' => $product->getQuantity(),
+            ':id' => $product->getID(),
         ]);
     }
    
+   
     
-    public function delete($id) {
+
+    public function softDelete($id) {
         $conn = Database::getConnection();
-        $stmt = $conn->prepare("DELETE FROM products WHERE id = :id");
+        $stmt = $conn->prepare("update produits set supprime=1 WHERE id = :id");
         $stmt->bindParam(':id', $id);
         $stmt->execute();
     }
+
 
     public function rendreRow(Product $product) {
         // Encoder l'image en base64
@@ -63,15 +86,10 @@ class ProductManager {
                     <td>" . $product->getPrice(). "</td>
                     <td>" .$product->getQuantity(). "</td>
                     <td>
-                   <a class='btn btn-primary text text-light text-decoration-none'href='/products/edit.php?id=".$product->getId()."'>Edit</a>
-                    <a class='btn btn-danger text text-light text-decoration-none' href='/products/delete.php?id=".$product->getId()."'>delete</a>
+                   <a class='btn btn-primary text text-light text-decoration-none'href='?page=edit_produit&edit=".$product->getId()."'>Edit</a>
+                    <a class='btn btn-danger text text-light text-decoration-none' href='?page=produit&delete=".$product->getId()."'>delete</a>
                     </td>
                </tr>";
 }
 
-
 }
-
-
-
-//     <td>" .$product->getImage()."</td>

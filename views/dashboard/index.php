@@ -10,9 +10,12 @@ include './layouts/navbar.php';
 include './layouts/homeContent.php';
 
 // Recuperer la page depuis l'URL
-$page = $_GET['page'] ?? 'dashboard';
+$page = $_GET['page'] ?? 'ajouter_produit';
 
 switch ($page) {
+ case 'edit_produit':
+include './pages/edit_produit.php';
+break;
 case 'produit':
 include './pages/produit.php';
 break;
@@ -44,9 +47,9 @@ echo "<div class='content'>
     <p>Vous avez été déconnecté.</p>
 </div>";
 break;
-case 'dashboard':
+case 'ajouter_produit':
 default:
-include './pages/dashboard.php';
+include './pages/ajouter_produit.php';
 break;
 }
 

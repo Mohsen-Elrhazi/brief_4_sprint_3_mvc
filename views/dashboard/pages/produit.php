@@ -1,12 +1,18 @@
 <div class="content">
-    <!-- <h1>Bienvenue sur le Dashboard</h1>
-    <p>Contenu principal de la page produit.</p> -->
-
     <?php 
         require_once '../../controllers/ProductController.php';
-    $ProductManager=new ProductManager();
-    $products= $ProductManager->displayAll();
-   
+        require_once '../../models/Product.php';
+        
+    $productManager=new ProductManager();
+     
+    //function delete
+     if(isset($_GET['delete'])){
+        $productManager->softDelete($_GET['delete']);
+        echo "<div class=' text text-center alert alert-success '>le produit a ete supprimer</div>";
+
+     }
+     
+    $products= $productManager->displayAll();
     
     ?>
     <table class="table">
@@ -22,7 +28,7 @@
         <tbody class="text text-center">
             <?php 
     foreach ($products as $product) {
-       echo $ProductManager->rendreRow($product);
+       echo $productManager->rendreRow($product);
     } 
     ?>
         </tbody>
