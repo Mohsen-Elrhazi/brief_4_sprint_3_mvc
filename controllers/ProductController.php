@@ -33,19 +33,20 @@ class ProductManager {
         return $data;
     }
 
-    //     public function save(){
-    //     $conn=Database::getConnection();
-        
-    //     $stmt = $conn->prepare("INSERT INTO products (name, image, price, quantite) VALUES (:name, :image, :price, :quantite)");
+    public function save(Product $product) {
+        $conn = Database::getConnection();
+    
+        $stmt = $conn->prepare("INSERT INTO produits (name, image, prix, quantity) VALUES (:name, :image, :prix, :quantity)");
+    
+        $stmt->execute([
+            ':name' => $product->getName(),
+            ':image' => $product->getImage(), 
+            ':prix' => $product->getPrice(),
+            ':quantity' => $product->getQuantity()
+        ]);
+    }
    
-    //     $stmt->bindParam(':name', $this->name);
-    //     $stmt->bindParam(':image', $this->image);
-    //     $stmt->bindParam(':price', $this->price);
-    //     $stmt->bindParam(':quantite', $this->quantite);
-
-    // $stmt->execute();
-    // }
-
+    
     public function delete($id) {
         $conn = Database::getConnection();
         $stmt = $conn->prepare("DELETE FROM products WHERE id = :id");

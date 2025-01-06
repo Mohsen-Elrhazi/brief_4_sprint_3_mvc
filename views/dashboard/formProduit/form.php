@@ -17,25 +17,25 @@
             <form action="" method="post">
                 <div class="form-group">
                     <label for="name">Nom du produit :</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="name">
                 </div>
 
                 <div class="form-group">
                     <label for="image">Image du produit :</label>
-                    <input type="file" id="image" name="image" required>
+                    <input type="file" id="image" name="image">
                 </div>
 
                 <div class="form-group">
                     <label for="price">Prix :</label>
-                    <input type="number" id="price" name="price" required>
+                    <input type="number" id="price" name="prix">
                 </div>
 
                 <div class="form-group">
                     <label for="quantity">Quantité :</label>
-                    <input type="number" id="quantity" name="quantity" min="1" required>
+                    <input type="number" id="quantity" name="quantity" min="1">
                 </div>
 
-                <button type="submit" value="Ajouter le produit">Ajouter</button>
+                <button type="submit" name="ajouter">Ajouter</button>
             </form>
         </div>
     </div>
