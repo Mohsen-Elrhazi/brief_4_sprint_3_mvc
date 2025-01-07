@@ -18,18 +18,18 @@
     <table class="table">
         <thead class="text text-center">
             <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Image</th>
-                <th scope="col">Prix</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Actions</th>
+                <th scope="col-2">Name</th>
+                <th scope="col-2">Image</th>
+                <th scope="col-2">Prix</th>
+                <th scope="col-2">Quantity</th>
+                <th scope="col-2">Actions</th>
             </tr>
         </thead>
-        <tbody class="text text-center">
+        <tbody class="text text-center text align-middle">
             <?php 
-    foreach ($products as $product) {
-       echo $productManager->rendreRow($product);
-    } 
+         foreach ($products as $product) {
+         echo $productManager->rendreRow($product);
+         } 
     ?>
         </tbody>
     </table>

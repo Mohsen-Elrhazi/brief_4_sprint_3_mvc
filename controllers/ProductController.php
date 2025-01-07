@@ -18,7 +18,6 @@ require_once '../../config/config.php';
 
 class ProductManager {
     
-
     public function displayAll() {
         $conn = Database::getConnection();
         $stmt = $conn->prepare("SELECT id,  name,image, prix, quantity FROM produits where supprime=0");
@@ -29,7 +28,6 @@ class ProductManager {
         foreach ($products as $product) {
             $data[] = new Product($product['name'],$product['image'],$product['prix'], $product['quantity'],$product['id']);
         }
-
         return $data;
     }
 
@@ -78,14 +76,24 @@ class ProductManager {
     $imageBase64 = base64_encode($product->getImage());
         return "<tr>
                     <td>".$product->getName()."</td>
-                     <td><img src='data:image/jpeg;base64,{$imageBase64}' width='100'></td>
+                     <td><img src='data:image/jpeg;base64,".$imageBase64."' width='86'></td>
                     <td>" . $product->getPrice(). "</td>
                     <td>" .$product->getQuantity(). "</td>
                     <td>
-                   <a class='btn btn-primary text text-light text-decoration-none'href='?page=edit_produit&edit=".$product->getId()."'>Edit</a>
-                    <a class='btn btn-danger text text-light text-decoration-none' href='?page=produit&delete=".$product->getId()."'>delete</a>
+                   <a class='btn btn-primary text text-light text-decoration-none px-4'href='?page=edit_produit&edit=".$product->getId()."'>Edit</a>
+                    <a class='btn btn-danger text text-light text-decoration-none' href='?page=produit&delete=".$product->getId()."'  onclick='return confirm(\"Êtes-vous sûr de vouloir supprimer ce produit ?\")' >Delete</a>
                     </td>
                </tr>";
+}
+
+public function rendreCard(Product $product) {
+    // Encoder l'image en base64
+$imageBase64 = base64_encode($product->getImage());
+    return "<div class='card'>
+             <img src='data:image/jpeg;base64,".$imageBase64."' width='140px'>
+             <h3>".$product->getName()."</h3>
+             <div class='prix'>".product->getPrix()."</div>
+           </div>";
 }
 
 }

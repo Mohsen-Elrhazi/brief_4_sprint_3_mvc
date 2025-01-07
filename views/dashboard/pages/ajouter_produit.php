@@ -14,8 +14,8 @@
             die ("<div class=' text text-center alert alert-warning '>erreur lors de lecture image</div>");
                 exit();
             }
-            $product = new Product($_POST['name'], $image, $_POST['prix'],$_POST['quantity']);
-            $productManager->save($product);
+            $newProduct = new Product($_POST['name'], $image, $_POST['prix'],$_POST['quantity']);
+            $productManager->save($newProduct);
             echo "<div class=' text text-center alert alert-success '>le produit a ete ajouter</div>";
         }
      }
@@ -24,5 +24,4 @@
         <?php
     include './formProduit/form.php';
     ?>
-
     </div>

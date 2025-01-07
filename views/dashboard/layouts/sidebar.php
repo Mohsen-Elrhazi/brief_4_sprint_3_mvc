@@ -7,13 +7,13 @@
     <ul class="nav-links">
         <li>
             <a href="index.php?page=ajouter_produit">
-                <i class="bx bx-grid-alt"></i>
+                <i class="fa-solid fa-plus"></i>
                 <span class="links_name">Ajouter Produit</span>
             </a>
         </li>
         <li>
             <a href="index.php?page=edit_produit">
-                <i class="bx bx-grid-alt"></i>
+                <i class="fa-regular fa-pen-to-square"></i>
                 <span class="links_name">Edit Produit</span>
             </a>
         </li>
@@ -31,7 +31,7 @@
         </li>
         <li>
             <a href="index.php?page=client">
-                <i class="bx bx-book-alt"></i>
+                <i class="bx bx-user"></i>
                 <span class="links_name">Client</span>
             </a>
         </li>
