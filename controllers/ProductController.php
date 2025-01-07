@@ -90,9 +90,12 @@ public function rendreCard(Product $product) {
     // Encoder l'image en base64
 $imageBase64 = base64_encode($product->getImage());
     return "<div class='card'>
-             <img src='data:image/jpeg;base64,".$imageBase64."' width='140px'>
-             <h3>".$product->getName()."</h3>
-             <div class='prix'>".product->getPrix()."</div>
+             <img class='image' src='data:image/jpeg;base64,".$imageBase64."' width='140px'>
+             <h3 class='name'>".$product->getName()."</h3>
+             <div class='prix'>
+             <h4 class='name'>".$product->getPrice()." DH"."</h4>
+             <button>"."Acheter"."</button>
+             </div>
            </div>";
 }
 

@@ -47,15 +47,15 @@
     <!-- Main Section - Services -->
     <section id="services">
         <h2>Nos Produits</h2>
-        <div class="services-container">
-            <div class="card">
+        <div class="produits-container">
+            <!-- <div class="card">
                 <img src="../../assets/images/IPHONE-12-MINI-removebg-preview.png" alt="Service 2">
                 <h3>IPHONE 12 PRO MAX</h3>
                 <div class="prix">
                     <h4>1000 DH</h4>
                     <button>Acheter</button>
                 </div>
-            </div>
+            </div> -->
             <?php 
            
              
