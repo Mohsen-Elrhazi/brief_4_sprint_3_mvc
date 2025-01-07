@@ -14,7 +14,7 @@
         <h1>Ajouter un produit</h1>
 
         <div class="form-container">
-            <form action="" method="post">
+            <form action="" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="name">Nom du produit :</label>
                     <input type="text" id="name" name="name">
@@ -22,7 +22,7 @@
 
                 <div class="form-group">
                     <label for="image">Image du produit :</label>
-                    <input type="file" id="image" name="image">
+                    <input type="file" id="image" name="image" accept="image/*">
                 </div>
 
                 <div class="form-group">

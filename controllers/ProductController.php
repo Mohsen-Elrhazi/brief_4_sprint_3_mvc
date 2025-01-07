@@ -35,15 +35,11 @@ class ProductManager {
 
     public function save(Product $product) {
         $conn = Database::getConnection();
-         // Encoder l'image en base64
-    $temp =  file_get_contents($product->getImage());
-    $imageBase64 = base64_encode($temp);
-    
         $stmt = $conn->prepare("INSERT INTO produits (name, image, prix, quantity) VALUES (:name, :image, :prix, :quantity)");
       try{
         $stmt->execute([
             ':name' => $product->getName(),
-            ':image' => $imageBase64, 
+            ':image' => $product->getImage(), 
             ':prix' => $product->getPrice(),
             ':quantity' => $product->getQuantity()
         ]);
