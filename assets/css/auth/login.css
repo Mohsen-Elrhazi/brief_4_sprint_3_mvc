@@ -2,6 +2,8 @@ body {
     font-family: 'Arial', sans-serif;
     background: #f3f4f6;
     display: flex;
+    flex-direction: column;
+    gap:10px;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -77,4 +79,8 @@ h1 {
 
 .options a:hover {
     color: #0056b3;
+}
+
+.alert{
+    width:40%;
 }

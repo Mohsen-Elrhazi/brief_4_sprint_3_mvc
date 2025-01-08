@@ -8,8 +8,10 @@ body {
     font-family: 'Arial', sans-serif;
     background: #f3f4f6;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap:20px;
     min-height: 100vh;
 }
 
@@ -62,8 +64,8 @@ h1 {
     width: 100%;
     padding: 10px;
     font-size: 16px;
-    background: #007BFF;
-    color: #fff;
+    background: #007BFF !important;
+    color: #fff !important;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -94,3 +96,8 @@ h1 {
 .options a:hover {
     color: #0056b3;
 }
+
+.alert{
+    width:33%;
+}
+

@@ -20,6 +20,7 @@
         <li>
             <a href="index.php?page=produit">
                 <i class="bx bx-box"></i>
+                <!-- <i class="fa-brands fa-product-hunt"></i> -->
                 <span class="links_name">Produit</span>
             </a>
         </li>

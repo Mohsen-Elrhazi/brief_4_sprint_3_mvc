@@ -69,8 +69,10 @@ nav ul li a {
 }
 
 #services {
-    padding: 50px 20px;
+    padding: 50px 10px;
     text-align: center;
+    /* background-color: #01bd2d; */
+
 }
 
 .services h2 {
@@ -80,16 +82,19 @@ nav ul li a {
 
 /* Services Section */
 .produits-container {
+    width:100%;
+    padding:10px;
     display: flex;
     flex-wrap: wrap;
     gap:16px;
     margin: 20px 0;
+    /* background-color: #d33232; */
 }
 
 .card {
-    width: 23%;
+    width: 19.1%;
     background-color: #f9f9f9;
-    padding:0px 20px 16px;
+    padding:10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     display: flex;
@@ -114,14 +119,13 @@ nav ul li a {
 
 .card .prix{
     width: 80%;
-    padding:5px;
+    padding-bottom:7px;
     display:flex;
     justify-content: space-between;
     align-items: center;
-}
-.card .prix{
     color: #ff5733; 
 }
+
 .card button {
     padding: 10px 20px;
     background-color: #ff5733;
