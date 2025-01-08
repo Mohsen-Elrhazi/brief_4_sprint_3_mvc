@@ -9,11 +9,13 @@ class User{
     private $status;
 
 
-    public function __construct($username, $email, $password,$id=null){
-        $this->id=$id;
+    public function __construct($username, $email, $password,$userID=null,$role=null,$status=null){
+        $this->userID=$userID;
         $this->username=$username;
         $this->email=$email;
         $this->password=$password;
+        $this->role=$role;
+        $this->status=$status;
     }
 
     public function getUserID(){
@@ -39,6 +41,8 @@ class User{
     public function getStatus(){
         return $this->status;
     }
+    
+  
     
 }
 

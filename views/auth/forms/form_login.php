@@ -4,23 +4,33 @@ require_once '../../../models/User.php';
 require_once '../../../config/config.php';
 
  if(isset($_POST['login'])){
-     $email=$_POST['email'];
-     $password=$_POST['password'];
+     $email=htmlspecialchars($_POST['email']);
+     $password=htmlspecialchars($_POST['password']);
 
      if(empty($email) || empty($password)){
         echo "<div class='alert alert-danger text-center'>Veuillez remplir tous les champs</div>";
     }else{
      $conn=DataBase::getConnection();
-     $stmt=$conn->prepare("select email, password from users");
-     $stmt->execute();
-     if($stmt->rowCount() > 0){
-        $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        foreach ($products as $product) {
-            $data[] = new Product($product['name'],$product['image'],$product['prix'], $product['quantity'],$product['id']);
-        }
-        return $data;
+     $stmt=$conn->prepare("select username, email, password from users where email= :email");
+     $stmt->execute([
+        ':email'=>$email,
+     ]);
      
+     if($stmt->rowCount() > 0){
+        $user= $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        if(password_verify($password,$user['password'])){
+
+          session_start();
+          echo $_SESSION['email']=$user['email'];
+          echo $_SESSION['name']=$user['username'];
+            exit();
+        }else{
+        echo "<div class='alert alert-danger text-center'>Mot de pass incorrect</div>";
+        }
+     }else{
+        echo "<div class='alert alert-danger text-center'>Aucun utilisateur trouvé avec cet email</div>";
+     }
     }
  }
 

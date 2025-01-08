@@ -19,7 +19,6 @@ class Product{
         return $this->id;
     }
 
-
     public function getName(){
         return $this->name;
     }

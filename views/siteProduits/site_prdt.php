@@ -31,10 +31,14 @@
                 <li><a href="#about">À propos</a></li>
                 <li><a href="#contact">Contactez-nous</a></li>
             </ul>
-            <div class="panier">
-                <i class="fa-solid fa-cart-shopping"> <span>0</span></i>
 
+            <div class="contain-register-panier">
+                <button>Sign in</button>
+                <div class="panier">
+                    <i class="fa-solid fa-cart-shopping"> <span>0</span></i>
+                </div>
             </div>
+
 
         </nav>
         <div class="hero-content">
@@ -48,17 +52,8 @@
     <section id="services">
         <h2>Nos Produits</h2>
         <div class="produits-container">
-            <!-- <div class="card">
-                <img src="../../assets/images/IPHONE-12-MINI-removebg-preview.png" alt="Service 2">
-                <h3>IPHONE 12 PRO MAX</h3>
-                <div class="prix">
-                    <h4>1000 DH</h4>
-                    <button>Acheter</button>
-                </div>
-            </div> -->
-            <?php 
-           
-             
+
+            <?php              
          $productManager=new ProductManager();
          $products= $productManager->displayAll();
          foreach ($products as $product) {
