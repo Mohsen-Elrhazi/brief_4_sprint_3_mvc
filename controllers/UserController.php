@@ -20,7 +20,7 @@ class userController{
     
     public function displayAll() {
         $conn = Database::getConnection();
-        $stmt = $conn->prepare("SELECT userID, username, email, role, status  FROM users where role='client' and status='active' ");
+        $stmt = $conn->prepare("SELECT userID, username, email, role, status  FROM users where role='client' ");
         $stmt->execute(); 
         $data = [];
         $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -33,22 +33,51 @@ class userController{
     }
 
     public function rendreRow(User $user) {
+
         return "<tr>
                     <td>".$user->getUserName()."</td>
                     <td>" . $user->getEmail(). "</td>
                     <td>" .$user->getRole(). "</td>
-                    <td>" .$user->getStatus(). "</td>
+                    <td class='status'>" .$user->getStatus(). "</td>
                     <td>
-                   <a class='btn btn-primary text text-light text-decoration-none px-4'href='?page=client&id=".$user->getUserID()."'>Activer</a>
-                    <a class='btn btn-danger text text-light text-decoration-none' href='?page=client&?id=".$user->getUserID()."'  onclick='return confirm(\"Êtes-vous sûr de vouloir supprimer ce client ?\")' >Desactiver</a>
+                    <a class='status-btn btn btn-success text text-light text-decoration-none' href='?page=client&id=".$user->getUserID()."&status=".$user->getStatus()."' )' >Activer</a>
                     </td>
                </tr>";
         } 
+        
+
+        public function changerStatus($id){
+            $conn=Database::getConnection();
+            
+            $stmt=$conn->prepare("select status from users where userID=:id ");
+            $stmt->execute([
+            ':id'=> $id,
+            ]);
+            
+             //recupererle resultat
+            $client=$stmt->fetch(PDO::FETCH_ASSOC);
+            
+            if($client['status']==='active'){
+            $stmt=$conn->prepare("update users set status= :status where userID=:id ");
+            $stmt->execute([
+            ':status'=> 'inactive',
+            ':id'=> $id,
+            ]);
+           }else{
+            $stmt=$conn->prepare("update users set status= :status where userID=:id ");
+            $stmt->execute([
+            ':status'=> 'active',
+            ':id'=> $id,
+            ]);
+           }
+        }
 
 
 
 
 
 }
+
+                    // <a class='status-inactive btn btn-danger text text-light text-decoration-none' href='?page=client&id=".$user->getUserID()."&status=".$user->getStatus()."' )' >Desactiver</a> 
 
 ?>

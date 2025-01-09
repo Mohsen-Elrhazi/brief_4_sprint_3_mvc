@@ -5,6 +5,19 @@
         
 
     $userController=new userController();
+    
+    if(isset($_GET['id']) &&isset($_GET['status'])){
+        $id=$_GET['id'];
+        $status=$_GET['status'];
+        $userController->changerStatus($id);
+
+        if($status==='active'){
+        echo "<div class=' text text-center alert alert-danger '>le client a ete desactiver</div>";
+        }else{
+        echo "<div class=' text text-center alert alert-success '>le client a ete activer</div>";
+            
+        }
+    }
      
     $users= $userController->displayAll();
     
@@ -24,7 +37,12 @@
          foreach ($users as $user) {
          echo $userController->rendreRow($user);
          } 
+
+    $users= $userController->displayAll();
+
     ?>
         </tbody>
     </table>
+
+    <script src='../../../assets/js/client.js'></script>
 </div>

@@ -25,17 +25,18 @@
             </a>
         </li>
         <li>
-            <a href="index.php?page=commande">
-                <i class="bx bx-list-ul"></i>
-                <span class="links_name">Commandes</span>
-            </a>
-        </li>
-        <li>
             <a href="index.php?page=client">
                 <i class="bx bx-user"></i>
                 <span class="links_name">Client</span>
             </a>
         </li>
+        <li>
+            <a href="index.php?page=commande">
+                <i class="bx bx-list-ul"></i>
+                <span class="links_name">Commandes</span>
+            </a>
+        </li>
+
         <li>
             <a href="index.php?page=analyses">
                 <i class="bx bx-pie-chart-alt-2"></i>
